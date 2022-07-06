@@ -1,12 +1,13 @@
-## Build
+## Dev
 FROM golang:1.18-alpine as development
 
 WORKDIR /app
 
-# Cache and install dependencies
+# Install dependencies
 COPY go.mod go.sum ./
 RUN go mod download
 
+# Install live reloader
 RUN go install github.com/cosmtrek/air@latest
 RUN air init
 
