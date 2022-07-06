@@ -1,29 +1,18 @@
 ## Build
-FROM golang:1.16-buster AS build
+FROM golang:1.18-alpine as development
 
 WORKDIR /app
 
-# Download Go Modules
-COPY go.mod ./
-COPY go.sum ./
+# Cache and install dependencies
+COPY go.mod go.sum ./
 RUN go mod download
 
-# Copy all go files using wildcard
-COPY *.go ./
+RUN go install github.com/cosmtrek/air@latest
+RUN air init
 
-# build binary file
-RUN go build -o /go-ci-cd
+# Copy app files
+COPY . .
 
+EXPOSE 8000
 
-## Deploy
-FROM gcr.io/distroless/base-debian10
-
-WORKDIR /
-
-COPY --from=build /go-ci-cd /go-ci-cd
-
-EXPOSE 8080
-
-USER nonroot:nonroot
-
-ENTRYPOINT ["/go-ci-cd"]
+CMD air

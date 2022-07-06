@@ -7,10 +7,11 @@ import(
 )
 
 func homePage(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, "This is home page")
+	io.WriteString(w, "This is home page.")
 }
 
 func main() {
 	http.HandleFunc("/", homePage)
+	log.Println("Server is running...")
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }

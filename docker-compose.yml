@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: go-ci-cd
+    image: go-ci-cd
+    build:
+      context: .
+      target: development
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
