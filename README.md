@@ -3,6 +3,7 @@
  - Create Dockerfile and Dockerfile.production
  - Build Docker production image using multi-stage builds
  - Add Docker compose and Makefile for easy of use
+ - Since the Go app and Postgres running in separate container, shared network needs to be created. The name of the network can be referenced rather than the IP which is not permanent.
  
 ### Useful Docker commands
  - To list images
@@ -50,7 +51,7 @@
      ```bash
             docker tag <IMAGE_ID> <ACCOUNT_ID>.dkr.ecr.ap-southeast-2.amazonaws.com/golang
      ```
- - Before pushing the image to ECR, create repository named as golang.
+ - Before pushing the image to ECR, create repository named as golang in AWS.
      ```bash
             docker push <ACCOUNT_ID>.dkr.ecr.ap-southeast-2.amazonaws.com/golang
      ```

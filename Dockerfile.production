@@ -1,8 +1,8 @@
 FROM golang:1.18 as builder
 
 # Define build env
-ENV GOOS linux
-ENV CGO_ENABLED 0
+ENV GOOS=linux
+ENV CGO_ENABLED=0
 
 # Add a work directory
 WORKDIR /app
