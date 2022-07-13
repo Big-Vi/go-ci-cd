@@ -15,26 +15,26 @@
                     "protocol": "tcp"
                 }
             ],
-            "secrets": [
+            "environment": [
                 {
                     "name": "POSTGRES_HOST",
-                    "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:090426658505:secret:prod/golang:POSTGRES_HOST::"
+                    "value": "database-1.c4voprwbyurm.ap-southeast-2.rds.amazonaws.com"
                 },
                 {
                     "name": "POSTGRES_PORT",
-                    "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:090426658505:secret:prod/golang:POSTGRES_PORT::"
+                    "value": "5432"
                 },
                 {
                     "name": "POSTGRES_USER",
-                    "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:090426658505:secret:prod/golang:POSTGRES_USER::"
+                    "value": "postgres"
                 },
                 {
                     "name": "POSTGRES_PASSWORD",
-                    "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:090426658505:secret:prod/golang:POSTGRES_PASSWORD::"
+                    "value": "postgres"
                 },
                 {
                     "name": "POSTGRES_DATABASE",
-                    "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:090426658505:secret:prod/golang:POSTGRES_DATABASE::"
+                    "value": "golang"
                 }
             ]
         }
