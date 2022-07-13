@@ -12,6 +12,7 @@
 !**/*.go
 !**/
 !*.yml
+!*.json
 
 # Test binary, built with `go test -c`
 *.test
