@@ -3,12 +3,9 @@ phases:
   install: 
     runtime-versions:
       golang: latest
-    commands:
-      - go get -u github.com/golang/lint/golint
 
   pre_build: 
     commands:
-      - golint -set_exit_status
       - go test
 
   build:
