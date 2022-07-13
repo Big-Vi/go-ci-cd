@@ -40,7 +40,7 @@ jobs:
           then echo "Commit status failed. Canceling execution"; 
           exit 1; 
         fi
-        
+
     - name: Checkout
       uses: actions/checkout@v3
 
@@ -64,7 +64,7 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . --target production -f Dockerfile.production --no-cache
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
