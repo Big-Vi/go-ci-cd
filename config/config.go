@@ -6,7 +6,7 @@ import(
 	"log"
 	"fmt"
 
-	"github.com/joho/godotenv"
+	// "github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 )
 
