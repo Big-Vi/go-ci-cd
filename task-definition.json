@@ -14,29 +14,29 @@
                     "containerPort": "8000",
                     "protocol": "tcp"
                 }
+            ],
+            "secrets": [
+                {
+                    "name": "POSTGRES_HOST",
+                    "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:090426658505:secret:prod/golang-pvRTlO:POSTGRES_HOST::"
+                },
+                {
+                    "name": "POSTGRES_PORT",
+                    "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:090426658505:secret:prod/golang-pvRTlO:POSTGRES_PORT::"
+                },
+                {
+                    "name": "POSTGRES_USER",
+                    "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:090426658505:secret:prod/golang-pvRTlO:POSTGRES_USER::"
+                },
+                {
+                    "name": "POSTGRES_PASSWORD",
+                    "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:090426658505:secret:prod/golang-pvRTlO:POSTGRES_PASSWORD::"
+                },
+                {
+                    "name": "POSTGRES_DATABASE",
+                    "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:090426658505:secret:prod/golang-pvRTlO:POSTGRES_DATABASE::"
+                }
             ]
-        }
-    ],
-    "secrets": [
-        {
-            "name": "POSTGRES_HOST",
-            "valueFrom": "arn:aws:ssm:region:090426658505:parameter/POSTGRES_HOST"
-        },
-        {
-            "name": "POSTGRES_PORT",
-            "valueFrom": "arn:aws:ssm:region:090426658505:parameter/POSTGRES_PORT"
-        },
-        {
-            "name": "POSTGRES_USER",
-            "valueFrom": "arn:aws:ssm:region:090426658505:parameter/POSTGRES_USER"
-        },
-        {
-            "name": "POSTGRES_PASSWORD",
-            "valueFrom": "arn:aws:ssm:region:090426658505:parameter/POSTGRES_PASSWORD"
-        },
-        {
-            "name": "POSTGRES_DATABASE",
-            "valueFrom": "arn:aws:ssm:region:090426658505:parameter/POSTGRES_DATABASE"
         }
     ],
     "volumes": [],
